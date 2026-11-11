@@ -10,7 +10,7 @@ on:
       - .github/workflows/publish-resources.yml
   workflow_dispatch:
   repository_dispatch:
-    types: [btec-resources-updated]
+  types: [publish-resources]
 
 permissions:
   contents: read
