@@ -178,5 +178,23 @@
     },
     "unit": "Unit 4: Sports Leadership",
     "url": "https://www.youtube.com/watch?v=KMjYy5ppk48&utm_source=chatgpt.com"
+  },
+  {
+    "description": "Gary O'Neil reveals how Wolves defeated Chelsea 4–2. Explore the tactical changes, defensive organisation and attacking decisions that helped his team overcome more expensive opposition.",
+    "duration": "20 mins",
+    "featured": true,
+    "id": 12,
+    "image": "https://learning.coachesvoice.com/wp-content/webpc-passthru.php?src=https://learning.coachesvoice.com/wp-content/uploads/2025/09/Gary-O-Neil-MC-feature.jpg&nocache=1",
+    "question": "Analyse how Wolves used tactical adjustments to exploit Chelsea's weaknesses. Which decision was most influential in determining the result, and why?",
+    "subtopic": "Technical skills and tactical components of sportoaching for performance",
+    "title": "How Did Wolves Beat a Team That Cost Hundreds of Millions?",
+    "topic": "A",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 2,
+      "Value": "Video"
+    },
+    "unit": "Unit 26: Technical and Tactical Demands of Sport",
+    "url": "https://learning.coachesvoice.com/cv/gary-oneil-tactics-masterclass/?utm_source=chatgpt.com"
   }
 ]
