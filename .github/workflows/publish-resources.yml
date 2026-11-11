@@ -10,11 +10,7 @@ on:
 permissions:
   contents: read
 
-# Serialize writes and deployments. GitHub may replace an older pending run;
-# Power Automate must send a complete snapshot, not incremental changes.
-concurrency:
-  group: btec-resource-publication
-  cancel-in-progress: false
+
 
 jobs:
   prepare:
