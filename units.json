@@ -20,10 +20,6 @@
     "title": "Application of Fitness Testing"
   },
   {
-    "id": 6,
-    "title": "Sports Psychology"
-  },
-  {
     "id": 7,
     "title": "Practical Sports Performance"
   },
@@ -36,23 +32,27 @@
     "title": "Research Methods in Sport"
   },
   {
-    "id": 10,
-    "title": "Sports Event Organisation"
-  },
-  {
     "id": 11,
     "title": "Research Project in Sport"
   },
   {
-    "id": 12,
-    "title": "Self-employment in the Sports Industry"
+    "id": 17,
+    "title": "Sports Injury Management"
   },
   {
-    "id": 13,
-    "title": "Instructing Gym-based Exercise"
+    "id": 18,
+    "title": "Work Experience in Active Leisure"
   },
   {
-    "id": 14,
-    "title": "Exercise and Circuit-based Physical Activity"
+    "id": 22,
+    "title": "Investigating Business in Sport and the Active Leisure Industry"
+  },
+  {
+    "id": 23,
+    "title": "Skill Acquisition in Sport"
+  },
+  {
+    "id": 26,
+    "title": "Technical and Tactical Demands of Sport"
   }
 ]
