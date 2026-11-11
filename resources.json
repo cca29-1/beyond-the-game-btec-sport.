@@ -106,5 +106,23 @@
     },
     "unit": "Unit 5: Application of Fitness Testing",
     "url": "https://pubmed.ncbi.nlm.nih.gov/41516615/?utm_source=chatgpt.com"
+  },
+  {
+    "description": null,
+    "duration": "10 mins",
+    "featured": true,
+    "id": 8,
+    "image": "https://i.ytimg.com/vi/HmTAqTGr5CQ/hqdefault.jpg?utm_source=chatgpt.com",
+    "question": "Arteta's furious dressing-room reaction raises questions about coaching behaviour. Explore how communication, motivation and emotional control can influence player relationships, confidence and performance.",
+    "subtopic": "A1 Skills and knowledge for coaching for performance",
+    "title": "Does Shouting Make You a Better Coach?",
+    "topic": "A",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 2,
+      "Value": "Video"
+    },
+    "unit": "Unit 8: Coaching Performance",
+    "url": "https://www.youtube.com/watch?v=HmTAqTGr5CQ&utm_source=chatgpt.com"
   }
 ]
