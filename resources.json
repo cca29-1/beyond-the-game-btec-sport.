@@ -160,5 +160,23 @@
     },
     "unit": "Unit 2: Fitness Training and Programming for Health, Sport and Well-being",
     "url": "https://www.guinnessworldrecords.com/news/2018/5/video-worlds-strongest-man-eddie-hall-shares-his-intense-eating-and-training-re-524420?utm_source=chatgpt.com"
+  },
+  {
+    "description": "Two Olympic high jumpers chose to share gold rather than compete in a jump-off. Explore sportsmanship, decision-making and whether winning should always be an athlete's ultimate priority.",
+    "duration": "10 mins",
+    "featured": true,
+    "id": 11,
+    "image": "https://media.npr.org/assets/img/2021/08/02/gettyimages-1331972630-870d320c304e0e27a99b1bb55ca2cf30d4faafb7.jpg",
+    "question": "Evaluate whether sharing an Olympic gold medal demonstrates positive leadership and sporting values or undermines the purpose of elite competition.",
+    "subtopic": "Characteristics and qualities of effective leadership",
+    "title": "Would You Share an Olympic Gold Medal?",
+    "topic": "A",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 2,
+      "Value": "Video"
+    },
+    "unit": "Unit 4: Sports Leadership",
+    "url": "https://www.youtube.com/watch?v=KMjYy5ppk48&utm_source=chatgpt.com"
   }
 ]
