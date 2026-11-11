@@ -8,9 +8,9 @@ on:
       - units.json
       - scripts/prepare_resources.py
       - .github/workflows/publish-resources.yml
-  workflow_dispatch:
-  repository_dispatch:
-  types: [publish-resources]
+    workflow_dispatch:
+   repository_dispatch:
+   types: [publish-resources]
 
 permissions:
   contents: read
