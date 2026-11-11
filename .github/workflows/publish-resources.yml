@@ -1,0 +1,66 @@
+name: Publish BTEC Sport resources
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - resources.json
+      - units.json
+      - scripts/prepare_resources.py
+      - .github/workflows/publish-resources.yml
+  workflow_dispatch:
+  repository_dispatch:
+    types: [btec-resources-updated]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: btec-resource-publication
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate resource snapshot
+        run: python scripts/prepare_resources.py
+      - name: Save Lists snapshot to this repository
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add resources.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update BTEC Sport resource snapshot'
+            git push origin HEAD:main
+          fi
+      - name: Stage website files only
+        run: |
+          mkdir -p _site
+          cp index.html resources.json units.json _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy BTEC hub
+        id: deployment
+        uses: actions/deploy-pages@v4
