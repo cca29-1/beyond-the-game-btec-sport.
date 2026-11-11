@@ -70,5 +70,23 @@
     },
     "unit": "Unit 22: Investigating Business in Sport",
     "url": "https://www.wslfootball.com/news/wsl-football-launches-social-first-interception-campaign?utm_source=chatgpt.com"
+  },
+  {
+    "description": "NBA hopefuls are tested on their explosive power before the draft. Discover the highest vertical jumps ever recorded and explore how fitness testing helps assess athletic performance.",
+    "duration": "15 mins",
+    "featured": false,
+    "id": 5,
+    "image": "https://cdn.nba.com/manage/2026/04/VL.jpg?utm_source=chatgpt.com",
+    "question": "Evaluate how useful the vertical jump test is when assessing a basketball player's potential. Could a player with a lower jump score still be more successful? Justify your answer.",
+    "subtopic": "B2 Fitness tests to assess components of skill-related fitness",
+    "title": "Can You Jump Higher Than an NBA Star?",
+    "topic": "B",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 0,
+      "Value": "Article"
+    },
+    "unit": "Unit 5: Application of Fitness Testing",
+    "url": "https://api-hub.nba.com/news/nba-draft-combine-highest-max-vertical-leaps?utm_source=chatgpt.com"
   }
 ]
