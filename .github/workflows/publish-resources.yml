@@ -1,20 +1,17 @@
 name: Publish BTEC Sport resources
+
 on:
+  repository_dispatch:
+    types: [publish-resources]
+  workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - index.html
-      - resources.json
-      - units.json
-      - scripts/prepare_resources.py
-      - .github/workflows/publish-resources.yml
-    workflow_dispatch:
-   repository_dispatch:
-   types: [publish-resources]
 
 permissions:
   contents: read
 
+# Serialize writes and deployments. GitHub may replace an older pending run;
+# Power Automate must send a complete snapshot, not incremental changes.
 concurrency:
   group: btec-resource-publication
   cancel-in-progress: false
@@ -23,37 +20,129 @@ jobs:
   prepare:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out main
+        uses: actions/checkout@v6
         with:
           ref: main
-      - uses: actions/setup-python@v5
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      # Read event data as JSON, never interpolate it into executable code.
+      # Deliberately self-contained: prepare_resources.py is not required.
       - name: Validate resource snapshot
-        run: python scripts/prepare_resources.py
-      - name: Save Lists snapshot to this repository
-        if: github.event_name == 'repository_dispatch'
+        shell: bash
         run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          def fail(message):
+              raise SystemExit(message)
+
+          def reject_constant(value):
+              fail("Non-finite JSON numbers are not allowed")
+
+          def unique_object(pairs):
+              result = {}
+              for key, value in pairs:
+                  if key in result:
+                      fail("Duplicate JSON object keys are not allowed")
+                  result[key] = value
+              return result
+
+          def load_json(path):
+              return json.loads(
+                  path.read_text(encoding="utf-8"),
+                  parse_constant=reject_constant,
+                  object_pairs_hook=unique_object,
+              )
+
+          target = Path("resources.json")
+          incoming = os.environ["GITHUB_EVENT_NAME"] == "repository_dispatch"
+          if incoming:
+              event = load_json(Path(os.environ["GITHUB_EVENT_PATH"]))
+              payload = event.get("client_payload")
+              if not isinstance(payload, dict) or "resources" not in payload:
+                  fail("client_payload.resources is required; existing file was not changed")
+              resources = payload["resources"]
+          else:
+              resources = load_json(target)
+
+          if not isinstance(resources, list):
+              fail("resources must be a JSON array, not a string or object")
+          if len(resources) > 10000:
+              fail("Too many resources (maximum 10000)")
+          for item in resources:
+              if not isinstance(item, dict) or not item:
+                  fail("Each resource must be a non-empty JSON object")
+
+          # Preserve field names and values: the site's schema is not assumed.
+          # An explicit [] is valid and intentionally clears the snapshot.
+          encoded = json.dumps(resources, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
+          if len(encoded.encode("utf-8")) > 5000000:
+              fail("Resource snapshot exceeds 5 MB")
+          for required in ("index.html", "units.json"):
+              if not Path(required).is_file():
+                  fail("Required website file is missing: " + required)
+          load_json(Path("units.json"))
+
+          if incoming:
+              temporary = target.with_name("resources.json.tmp")
+              temporary.write_text(encoded, encoding="utf-8")
+              temporary.replace(target)
+          print(f"Validated {len(resources)} resources")
+          PY
+
+      - name: Commit updated snapshot to main
+        if: github.event_name == 'repository_dispatch'
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add resources.json
+          git add -- resources.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update BTEC Sport resource snapshot'
+            # Never force push. If main changed externally, fail and rerun.
             git push origin HEAD:main
+          else
+            echo 'Resource snapshot is unchanged.'
           fi
-      - name: Stage website files only
+
+      - name: Stage static website
+        shell: bash
         run: |
+          set -euo pipefail
           mkdir -p _site
           cp index.html resources.json units.json _site/
-      - uses: actions/upload-pages-artifact@v3
+          # Include common static asset directories, if the site uses them.
+          for directory in assets css js images fonts; do
+            if [ -d "$directory" ]; then
+              cp -R "$directory" _site/
+            fi
+          done
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+          touch _site/.nojekyll
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+
   deploy:
     needs: prepare
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write
@@ -61,6 +150,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy BTEC hub
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy static site
         id: deployment
         uses: actions/deploy-pages@v4
