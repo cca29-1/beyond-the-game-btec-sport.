@@ -34,5 +34,23 @@
     },
     "unit": "Unit 1: Anatomy & Physiology",
     "url": "https://www.bhf.org.uk/informationsupport/how-a-healthy-heart-works"
+  },
+  {
+    "description": "English football generates over £9 billion, yet 94% of clubs are losing money. Discover why rising costs, debt and reliance on wealthy owners threaten the future of football clubs.",
+    "duration": "15 mins",
+    "featured": true,
+    "id": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj8NjStzVEy899rF-qeueJ38_m7D_MILNWYT9Ecnldyg&s=10",
+    "question": "If you were advising a financially struggling football club, what changes would you recommend to improve its financial sustainability without damaging its competitiveness? Justify your decisions using evidence from the report.",
+    "subtopic": "E1 Financing a business in sport and active leisure",
+    "title": "Football Is Worth £9 Billion. So Why Are Clubs Going Broke?",
+    "topic": "E",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 3,
+      "Value": "Research"
+    },
+    "unit": "Unit 22: Investigating Business in Sport",
+    "url": "https://www.footballregulator.org.uk/posts/state-of-the-game-report-concludes-english-football-dangerously-exposed?utm_source=chatgpt.com"
   }
 ]
