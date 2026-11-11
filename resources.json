@@ -88,5 +88,23 @@
     },
     "unit": "Unit 5: Application of Fitness Testing",
     "url": "https://api-hub.nba.com/news/nba-draft-combine-highest-max-vertical-leaps?utm_source=chatgpt.com"
+  },
+  {
+    "description": "Can you trust your smartwatch during exercise? Researchers compared heart-rate monitors and found accuracy decreased during intense movements. Discover how sensor placement affects results and why accurate data matters in sport.",
+    "duration": "15 mins",
+    "featured": false,
+    "id": 6,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2kZZIkRSh7j8v86ruYthMjVp59W8QPE7HN7gLzZFQQ&s=10",
+    "question": "Evaluate whether a coach should rely on smartwatch heart-rate data to monitor training intensity. How might inaccurate readings influence training decisions?",
+    "subtopic": "A1 Validity of fitness tests",
+    "title": "Is Your Smartwatch Lying About Your Heart Rate?",
+    "topic": "A",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 3,
+      "Value": "Research"
+    },
+    "unit": "Unit 5: Application of Fitness Testing",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41516615/?utm_source=chatgpt.com"
   }
 ]
