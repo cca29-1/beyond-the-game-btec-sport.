@@ -52,5 +52,23 @@
     },
     "unit": "Unit 22: Investigating Business in Sport",
     "url": "https://www.footballregulator.org.uk/posts/state-of-the-game-report-concludes-english-football-dangerously-exposed?utm_source=chatgpt.com"
+  },
+  {
+    "description": "Women's football is reaching beyond traditional fans. Discover how the WSL's Interception campaign uses social media creators and unexpected collaborations to attract new audiences and grow the women's game.",
+    "duration": "15 mins",
+    "featured": true,
+    "id": 4,
+    "image": "https://e0.365dm.com/23/07/2048x1152/skysports-future-of-football_6225078.jpg?20230720234646",
+    "question": "Evaluate whether collaborating with social media influencers is a more effective marketing strategy for the WSL than traditional advertising. How could the league measure its success?",
+    "subtopic": "D1 Marketing 7 Ps",
+    "title": "Can TikTok Turn Women's Football into Big Business?",
+    "topic": "D",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 0,
+      "Value": "Article"
+    },
+    "unit": "Unit 22: Investigating Business in Sport",
+    "url": "https://www.wslfootball.com/news/wsl-football-launches-social-first-interception-campaign?utm_source=chatgpt.com"
   }
 ]
