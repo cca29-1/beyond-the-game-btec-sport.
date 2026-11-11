@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "description": "Explore how the heart responds to exercise and why cardiovascular function matters for sporting performance.",
+    "duration": "10 mins",
+    "featured": true,
+    "id": 2,
+    "image": "https://static.garmincdn.com/gdc/garmin-technology/Blog-tiles/45722-heart-rate-monitoring-Garmin-smart-measure-heart-TABLET.jpg",
+    "question": "Explain how heart rate changes during exercise and why.",
+    "subtopic": "D4 Responses to a single sport or exercise session",
+    "title": "How Does Exercise Affect Heart Rate?",
+    "topic": "D",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 0,
+      "Value": "Article"
+    },
+    "unit": "Unit 1: Anatomy & Physiology",
+    "url": "https://www.bhf.org.uk/informationsupport/how-a-healthy-heart-works"
+  }
+]
