@@ -124,5 +124,23 @@
     },
     "unit": "Unit 8: Coaching Performance",
     "url": "https://www.youtube.com/watch?v=HmTAqTGr5CQ&utm_source=chatgpt.com"
+  },
+  {
+    "description": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1330901287.jpg?c=original",
+    "duration": "10 mins",
+    "featured": true,
+    "id": 9,
+    "image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1330901287.jpg?c=original",
+    "question": "Analyse why an elite gymnast might suddenly struggle to perform a previously mastered skill. How could a coach help them regain confidence and control?",
+    "subtopic": "Skill learning and performance",
+    "title": "How Can an Olympic Champion Forget How to Twist?",
+    "topic": "A",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 2,
+      "Value": "Video"
+    },
+    "unit": "Unit 23: Skill Acquisition",
+    "url": "https://www.youtube.com/watch?v=VFdkvd1rp5g&utm_source=chatgpt.com"
   }
 ]
