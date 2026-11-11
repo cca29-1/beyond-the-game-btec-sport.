@@ -1,11 +1,11 @@
 [
   {
-    "description": null,
-    "duration": null,
-    "featured": null,
+    "description": "Why are ACL injuries so common in women's football? Explore FIFPRO's Project ACL, which investigates potential injury risk factors and how research could help prevent serious injuries and protect players' careers.",
+    "duration": "20 mins",
+    "featured": true,
     "id": 1,
     "image": null,
-    "question": null,
+    "question": "Evaluate the extent to which ACL injuries in women's football could be reduced through changes to training, player workload and injury prevention strategies. Which approach would you prioritise, and why?",
     "subtopic": "C3 Preventative measures",
     "title": "Why Are So Many Female Footballers Suffering ACL Injuries?",
     "topic": "C",
