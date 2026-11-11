@@ -142,5 +142,23 @@
     },
     "unit": "Unit 23: Skill Acquisition",
     "url": "https://www.youtube.com/watch?v=VFdkvd1rp5g&utm_source=chatgpt.com"
+  },
+  {
+    "description": "Eddie Hall lifted an astonishing 500kg. Discover the extreme training, recovery and nutritional demands behind his achievement, and question whether becoming the strongest is worth the potential health risks.",
+    "duration": "15 mins",
+    "featured": true,
+    "id": 10,
+    "image": "https://www.guinnessworldrecords.com/news/2018/5/images/eddie-hall-heaviest-deadlift-525205.jpg",
+    "question": "Evaluate whether Eddie Hall's approach to training and recovery was appropriate for his sporting goals. Would the same methods be suitable for other athletes?",
+    "subtopic": "D2 Training methods for physical fitness-related components — muscular strength",
+    "title": "Is Lifting 500kg Worth Risking Your Health?",
+    "topic": "D",
+    "type": {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+      "Id": 2,
+      "Value": "Video"
+    },
+    "unit": "Unit 2: Fitness Training and Programming for Health, Sport and Well-being",
+    "url": "https://www.guinnessworldrecords.com/news/2018/5/video-worlds-strongest-man-eddie-hall-shares-his-intense-eating-and-training-re-524420?utm_source=chatgpt.com"
   }
 ]
